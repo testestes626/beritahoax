@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive News & Announcements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+            background-image: url(y-so-serious.png);
+            color: white;
+        }
+        header {
+            background-color: #333333;
+            color: white;
+            padding: 2px;
+            text-align: center;
+            position: relative;
+            margin: 0;
+            background-image: url(beritahoax.jpg);
+            background-position: top;
+            font-size:20px;
+        }
+        .news-ticker {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px;
+            display:flexbox;
+            text-align: center;
+            white-space: nowrap; /* tampilan berita berjalan ke kiri yak */
+            position: relative; /* Position relative for stacking context */
+            animation: ticker 23s linear infinite; /* Apply animation */
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); } /* Start off-screen to the right */
+            100% { transform: translateX(-100%); } /* Move off-screen to the left */
+        }
+        nav {
+            background-color: #444;
+            padding: 1px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 20px;
+            margin: 100;
+            padding: 14px 20px;
+            text-align: center;
+            padding-left: 250px;
+            padding-right: 250px;
+        }
+        .section {
+            display: none; /* Initially hide all sections */
+        }
+        .news-item {
+            background-color: white;
+            margin-bottom: 30px;
+            padding: 70px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url(circle-blues.webp);
+            color: white;
+            border-radius: 15px; border-color: gray;
+        }
+        .news-item h2 {
+            margin-top: 0;
+            cursor: pointer;
+        }
+        .news-item p {
+            display: none;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>!!Berita HOAX!!</h1>
+    <p>CEO.Galuh Bayu Saputra</p>
+</header>
+
+<div class="news-ticker">
+    Berita Terbaru : Jika memukul kepala dengan palu akan mengakibatkan benjolan pada kepala. Mohon Jangan Dicoba!
+</div>
+
+<nav>
+    <a href="#home" onclick="showSection('home')">Home</a>
+    <a href="#latest-news" onclick="showSection('latest-news')">Berita Terbaru</a>
+    <a href="#announcements" onclick="showSection('announcements')">Pengumuman</a>
+    <a href="#contact" onclick="showSection('contact')">Contact Person (cp)</a>
+    <a href="#about-news" onclick="showSection('about-news')">Tentang Berita</a> <!-- New link for About News -->
+</nav>
+
+<div class="container">
+
+    <div id="home" class="section">
+        <h2>Selamat Datang di Berita HOAX</h2>
+        <p><span style="background-color: gray;"><b>Berita HOAX</b></span> adalah berita terkini yang berisi dengan informasi aktual dan faktual (mungkin). Pada laman ini anda sekalian akan disuguhi dengan berbagai berita menarik dan menghibur, jika anda gabut jangan lupa join dengan kami di <span style="background-color: gray;color: yellow;">BeritaHOAX.co.id</span><br><br>
+            <img src="beritahoax.jpg" width="200px">
+        </p>
+    </div>
+
+    <div id="latest-news" class="section">
+        <h2 style="background-color: gray;border-radius: 10px;">Berita Terbaru</h2>
+        <div class="news-item">
+            <h2 style="color: white;">Berita Menarik : Rafathar makan pake piring ==> &#x25BC;</h2>
+            <p style="color: white;">Diduga ternyata anak Rafi dan Gigi menggunakan piring saat makan siang di kantin sekolah. Diduga Rafathar memiliki saingan berat di sekolah yaitu anak dari dua influencer kaya yang biasa dikenal JessNoLimit dan SiscaKohl.</p>
+            <p><em>Posted on October 5, 2024</em></p>
+        </div>
+
+        <div class="news-item">
+            <h2 style="color: white;">Cek Khodam berujung terlilit Hutang ==> &#x25BC;</h2>
+            <p style="color: white;">TAPI BOONG!!! HAYUUUUUUKKKK</p>
+            <p><em>Posted on September 25, 2024</em></p>
+        </div>
+    </div>
+
+    <div id="announcements" class="section">
+        <h2 style="background-color: gray;border-radius: 10px;">Pengumuman</h2>
+        <div class="news-item">
+            <h2 style="color: white;">Moment Menegangkan Menunggu Pengumuman Akreditasi P.Matematika &#x25BC;</h2>
+            <p style="color:white;">Dalam rangka kegiatan akreditasi program studi, banyak dosen yang mengalami depresi. Tanpa diduga kegiatan ini membawa banyak dampak negatif dan positif bagi pihak kampus Unram. Tepat pada hari akreditasi mahasiswa khususnya mahasiswa pendidikan matematika FKIP, penuh dengan kegirangan karena dosen hanya memberikan tugas biasa saja. Hingga akhirnya banyak mahasiswa yang bolos dengan alasan dosen tidak akan masuk perkuliahan. Kesimpulannya adalah mahasiswa akan menjadi senang jika tidak ada kegiatan pembelajaran.</p>
+            <p><em>Posted on October 1, 2024</em></p>
+        </div>
+
+        <div class="news-item">
+            <h2 style="color:white;">Acara Kumpul-Kumpul Kelas 5D Berujung WACANA!!! &#x25BC;</h2>
+            <p style="color: white;">Kurang Informasi Lebih Lanjut.....</p>
+            <p><em>Posted on September 30, 2024</em></p>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Hubungi Kami</h2>
+        <span>!!!Pendaftaran GRATIS!!!</span><br>Hanya biaya administrasi sebesar Rp.100.000.000.00<br>Buruan Join Berita Hoax </p>
+        <img src="beritahoax.jpg" width="180px">
+        <p>~Email: beritaHOAX@gmail.com ~Phone: +62 8647 865 7741 285</p>
+    </div>
+
+    <div id="about-news" class="section"> <!-- New section for About News -->
+        <h2>Tentang Berita</h2>
+        <p>Berita adalah informasi yang disampaikan kepada publik melalui berbagai media, termasuk cetak, elektronik, dan digital. Berita berfungsi untuk memberikan informasi terkini tentang peristiwa, kejadian, atau isu yang sedang berlangsung, baik lokal, nasional, maupun internasional. Sebagai sarana komunikasi, berita harus disajikan dengan akurat, berimbang, dan objektif untuk membangun pemahaman masyarakat.</p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2024, Berita Hoax Terbaru. Penuh Dengan Hoax.</p>
+</div>
+
+<div class="popup" id="popup">
+    <h2>Laman Spesial</h2>
+    <p>Selamat Datang Di Berita HOAX</p>
+    <button id="closePopup">Close</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<script>
+    // Function to show the selected section and hide others
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+            .kotak{
+            display:inline ;
+            grid-template-columns: 220 auto 220;
+        }
+        .kiri {
+            background-color: #f4f4f4;
+            width: 100%;
+            height: 300px;
+            display: left;
+        }
+        .tengah{
+            background-color: aqua;
+            width: 100%;
+            height: 300px;
+            display: center;
+        }
+        .kanan{
+            background-color: #ff9800;
+            width: 100%;
+            height: 300px;
+            display: right;
+        }
+        <div class="kotak">
+        <div class="kiri"></div>
+        <div class="tengah"></div>
+        <div class="kanan"></div>
+    </div>
+</script>
+</body>
+</html>
+<div id="announcements" class="section">
+        <div class="content-wrapper3">
+            <div class="content-box">
+                <a href="#" style="display: block; text-decoration: none; color: inherit;" onclick="toggleContent(event, 'ann1')">
+                    <h2>Announcements</h2>
+                    <p>Our office will be closed for the holiday season...</p>
+                </a>
+                <div id="ann1" class="extra-content">
+                    <p>We will resume normal operations on January 3rd.</p>
+                </div>
+            </div>
+            <div class="content-box">
+                <a href="#" style="display: block; text-decoration: none; color: inherit;" onclick="toggleContent(event, 'ann2')">
+                    <h2>Event Reminder: Annual Company Meeting</h2>
+                    <p>Don't forget about our annual company meeting...</p>
+                </a>
+                <div id="ann2" class="extra-content">
+                    <p>All employees are encouraged to attend this important meeting.</p>
+                </div>
+            </div>
+            <div class="content-box">
+                <a href="#" style="display: block; text-decoration: none; color: inherit;" onclick="toggleContent(event, 'ann3')">
+                    <h2>Important Dates</h2>
+                    <p>Mark your calendars for important dates and deadlines!</p>
+                </a>
+                <div id="ann3" class="extra-content">
+                    <p>Stay organized and keep track of all key dates.</p>
+                </div>
+            </div>
+        </div>
+    </div>

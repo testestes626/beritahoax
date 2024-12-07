@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Berita Hoax</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+/* Reset dan dasar styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(webb-dark.png);
+    background-color: #3c75f063; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    margin: 0;
+    height: 130vh;
+    text-align: center;
+    
+}
+
+header {
+    background: linear-gradient(90deg, #333, #555); /* Dark gradient */
+    background-image: url(beritahoax.jpg);
+    color: white;
+    padding: 20px;
+    font-size: 38px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    
+    background-color: #f4f4f46c;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 400px;
+    margin-right: 400px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+nav .nav-link {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+nav .nav-link:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.432);
+    border-radius: 15px;
+    box-shadow: #333;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin-top: 20px;
+    flex: 100px;
+}
+
+/* Styling untuk konten kolom */
+.col {
+    background-color: #148f89be; /* Dark gray for content columns */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex:1;
+}
+
+.col:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.col1 {
+    background-color: #148f898f; /* Dark gray for content columns */
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex:10;
+}
+.col1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+h5 {
+    color: #ffd700; /* Gold accent color */
+    font-weight: 600;
+}
+h4 {
+    color: #00ffd5; /* Gold accent color */
+    font-weight: 600;
+}
+
+ol {
+    padding-left: 30px;
+    line-height: 1.8;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    background: #1c1c1c; /* Dark footer */
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+    position:fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Dropdown item styling */
+
+
+.dropdown-item {
+    cursor: pointer;
+}
+.video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+.video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+/* Konten tambahan yang disembunyikan dan ditampilkan saat tombol diklik */
+.additional-content {
+    display: none;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #dcdcdc;
+}
+
+/* Styling untuk tombol */
+.btn-primary {
+    background-color: #4e73df;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2d56a1; /* Darker blue for hover */
+}
+
+    </style>
+        
+
+<script>
+    function updateColumnContent(menu, shape) {
+        const column = document.getElementById('column2');
+        if (menu === 'pengertian') {
+            if (shape === 'Persegi') {
+                column.innerHTML = `
+                    <h4>Sekelompok Mahasiswa Kelas 5D Diduga Menghilang</h4>
+                    <button class="btn btn-primary" onclick="toggleAdditionalContent('persegi')">Selengkapnya</button>
+                    <div id="persegi" class="additional-content">
+                    <img src="kumpulan.jpg" alt="kumpulan" style="width:180px ;height: 180px;border-radius:35px;">
+                        <p class="padd">[Mataram,32 oktober 2024]- Kepolisian dan Tim SAR tengah melakukan pencarian intensif terhadap sekelompok Mahasiswa yang diduga Healing di kawasan Aik Nyet sejak 2 hari lalu.
+                        Kelompok ini terdiri dari sembilan orang semula berencana melakukan kegiatan Ngegril, namun hingga kini belum ada kabar atau tanda-tanda keberadaan mereka.<br><br>
+                        Salah satu teman korban melaporkan bahwa komunikasi terakhir terjadi pada satu hari sebelum dinyatakan menghilang."Daripada pusing-pusing mikirin tugas mending login," ujar Ngab Owi, salah satu geng mereka.</p>
+                    </div>
+                `;
+            } else if (shape === 'Persegi Panjang') {
+                column.innerHTML = `
+                    <h4>Akibat Losestrike game ML, Mahasiswa Pukul Teman Dengan Bangku</h4>
+                    <button class="btn btn-primary" onclick="toggleAdditionalContent('persegipanjang')">Selengkapnya</button>
+                    <div id="persegipanjang" class="additional-content">
+                    <img src="pelaku.jpg" alt="kumpulan" style="width:180px ;height: 180px;border-radius:35px;">
+                        <p>[Mataram,29 Februari 2024]- Pertengkaran antara dua mahasiswa akibat perselisihan saat bermain game online (mobil* Legen*), hingga berakhir dengan insiden pemukulan yang tragis. Kejadian ini terjadi di gedung D, Universitas.<br><br>
+                        Menurut keterangan saksi mata yaitu Telong, mereka awalnya bermain bersama dalam satu tim di game Ranked. Namun, setelah berada dalam draft pick inisial NT.Demont dengan merasa kesal mengangkat bangku langsung ke wajah si korban. Diduga motif dibalik itu karena "Gua Saber Roam" ujar si korban.</p>
+                    </div>
+                `;
+            } else if (shape === 'Segitiga') {
+                column.innerHTML = `
+                    <h4>Diduga Lelah Ditanya Kapan Nikah, Pria Inisial EJ Bakar Rumah Tetangga</h4>
+                    <button class="btn btn-primary" onclick="toggleAdditionalContent('segitiga')">Selengkapnya</button>
+                    <div id="segitiga" class="additional-content">
+                    <img src="pelaku1.jpg" alt="kumpulan" style="width:180px ;height: 180px;border-radius:35px;">
+                        <p>[Mataram, 1 Januari 2024]- Seorang pria berinisial EJ (30) diamankan polisi setelah nekat membakar rumah tetangganya di kawasan Kekalik. Penyebab aksi nekat tersebut diduga karena EJ tersinggung usai berulang kali ditanya kapan akan menikah oleh tetangga,seorang wanita berinisial NM (32).<br><br>
+                        Menurut keterangan dari warga sekitar sempat terjadi cekcok antara keduanya, "Awalnya mereka hanya ngobrol biasa, tapi NM sempat bertanya soal kapan menikah. Setelah itu EJ terlihat kesal dan langsung pergi membeli bensin, kemudian sontak membakar rumah NM, tetangganya ", ujar salah satu tetangga yang sempat melihat kejadian itu.</p>
+                    </div>
+                `;
+            } else if (shape === 'lingkaran') {
+                column.innerHTML = `
+                    <h4>Mahasiswa Ditemukan Mengenaskan Bersimpah Darah,Diduga Tersangka Pacar Dari Korban</h4>
+                    <button class="btn btn-primary" onclick="toggleAdditionalContent('lingkaran')">Selengkapnya</button>
+                    <div id="lingkaran" class="additional-content">
+                    <img src="pacar.jpg" alt="kumpulan" style="width:180px ;height: 180px;border-radius:35px;">
+                        <p>[Mataram, 22 Desember 2024] - Sebuah insiden tragis mengguncang masyarakat setempat ketika seorang pria berinisial AR (25) ditangkap polisi setelah diduga membunuh pacarnya, NF (23). Peristiwa ini terjadi di rumah kontrakan korban pada Selasa malam (5/12).<br><br>
+                            Berdasarkan keterangan polisi, motif pembunuhan diduga karena AR cemburu dan menuduh NF berselingkuh. Dalam emosi yang memuncak, pelaku menyerang korban hingga tewas di tempat. Tetangga yang mendengar keributan melaporkan kejadian tersebut ke pihak berwajib.
+                            Kapolres Kota X, AKBP Budi, menyatakan bahwa AR telah mengakui perbuatannya dan menyesal. "Kami masih mendalami kasus ini, termasuk memeriksa saksi-saksi untuk mendapatkan gambaran lebih jelas," ujarnya.<br><br>
+                            </p>
+                    </div>
+            
+                `;
+            } else if (shape === 'kotak') {
+                column.innerHTML = `
+                    <h4>Mahasiswa Berinisial BHR, Melarikan Diri Ke Luar Negeri Membawa Uang Hasil Korupsinya Senilai 4.2 Miliyar</h4>
+                    <button class="btn btn-primary" onclick="toggleAdditionalContent('kotak')">Selengkapnya</button>
+                    <div id="kotak" class="additional-content">
+                    <img src="korupsi.webp" alt="kumpulan" style="width:180px ;height: 180px;border-radius:35px;">
+                        <p>[Mataram, 2 Desember 2025]-Seorang mahasiswa berinisial BHR (22) menjadi buron setelah diduga melakukan tindak pidana korupsi senilai Rp4,2 miliar. BHR, yang merupakan pengurus organisasi mahasiswa di kampus ternama, diketahui kabur ke luar negeri menggunakan dokumen palsu.<br><br>
+                            Kepala Kejaksaan Tinggi Jakarta, Arif Budiman, menyebutkan bahwa uang tersebut diduga diselewengkan dari dana hibah kegiatan mahasiswa yang seharusnya digunakan untuk program pengembangan kampus. "Kami telah bekerja sama dengan Interpol untuk mencari dan membawa tersangka kembali ke Indonesia," ujar Arif.<br><br>
+                            Kasus ini menjadi sorotan publik karena melibatkan seorang mahasiswa yang seharusnya menjadi teladan generasi muda. Pihak kampus telah menyatakan dukungan penuh terhadap proses hukum dan komitmen untuk mencegah kejadian serupa di masa depan.</p>
+                    </div>
+                `;
+            }
+        } else if (menu === 'sifat') {
+            if (shape === 'Persegi') {
+                column.innerHTML = `
+                    <h5>Dokumentasi Video</h5>
+                    <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/a75VKZshJZ0?si=zGijJlfHAtPkAkHX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                `;
+            } else if (shape === 'Persegi Panjang') {
+                column.innerHTML = `
+                    <h5>Dokumentasi Video</h5>
+                    <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6J6Fqh6VqgU?si=IQmVwQ2_1PuoqRq5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                `;
+            } else if (shape === 'Segitiga') {
+                column.innerHTML = `
+                    <h5>Dokumentasi Video</h5>
+                    <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/N34R33uq264?si=Bwia4P0dGLrULc4i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                `;
+            } else if (shape === 'lingkaran') {
+                column.innerHTML = `
+                    <h5>Dokumentasi Video</h5>
+                    <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6CDhxE8MLYc?si=t6S12Y-EI6x6LHRP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                `;
+            } else if (shape === 'kotak') {
+                column.innerHTML = `
+                    <h5>Dokumentasi Video</h5>
+                    <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nRG4NtkLp9k?si=WMuy9t0217IOU2rT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                `;
+            }
+        } else if (menu === 'gambar') {
+            if (shape === 'Persegi') {
+                column.innerHTML = '<div class="image-container"><img src="Pelaku1.jpg" alt="pelaku1"></div>';
+            } else if (shape === 'Persegi Panjang') {
+                column.innerHTML = '<div class="image-container"><img src="Persegipanjang.png" alt="Persegi Panjang"></div>';
+            } else if (shape === 'Segitiga') {
+                column.innerHTML = '<div class="image-container"><img src="Segitiga.png" alt="Segitiga"></div>';
+            } else if (shape === 'Lingkaran') {
+                column.innerHTML = '<div class="image-container"><img src="Lingkaran.png" alt="Lingkaran"></div>';
+            }else if (shape === 'kotak') {
+                column.innerHTML = '<div class="image-container"><img src="Lingkaran.png" alt="kotak"></div>';
+            }
+        }
+    }
+
+    function toggleAdditionalContent(id) {
+        const content = document.getElementById(id);
+        if (content.style.display === "none" || content.style.display === "") {
+            content.style.display = "block";
+        } else {
+            content.style.display = "none";
+        }
+    }
+</script>
+
+    </head>
+    <body>
+    
+        <header style="font-family: 'Times New Roman', Times, serif; font-size: 65px; letter-spacing: 15px; text-shadow: #1ddd17;margin: 8px;">BERITA HOAX</header>
+    
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kasus 1
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('pengertian', 'Persegi')">Ulasan</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('sifat', 'Persegi')">Dokumentasi</button></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kasus 2
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('pengertian', 'Persegi Panjang')">Ulasan</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('sifat', 'Persegi Panjang')">Dokumentasi</button></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kasus 3
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('pengertian', 'Segitiga')">Ulasan</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('sifat', 'Segitiga')">Dokumentasi</button></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kasus 4
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('pengertian', 'lingkaran')">Ulasan</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('sifat', 'lingkaran')">Dokumentasi</button></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kasus 5
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('pengertian', 'kotak')">Ulasan</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="updateColumnContent('sifat', 'kotak')">Dokumentasi</button></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col" id="column1">
+                <h5>Founder of Berita Hoax</h5><br><br>
+                <img src="pas foto1.jpg" style="width:170px; height:180px; border-radius:35px;>"<br>
+                <br><p> Dr.Galuh Bayu Saputra,M.Pd,M.Si.PhD</p>
+                <p> E1R022009</p>
+            </div>
+            <div class="col1" id="column2">
+                <h5>WELCOME TO <strong>BERITA HOAX</strong></h5><br>
+                <p style="font-size: 20px;">Laman ini berisikan kasus-kasus terbaru dan ramai dibincangkan<br>Untuk menikmati laman ini anda bisa mengakses kasus-kasus dengan <strong>GRATIS</strong> melalui menu diatas.</p>
+            </div>                        
+            <div class="col" id="column3">
+                <h5>Contact Person</h5>
+                <p style="font-size: 20px;">Cuma RP,4.000.000.000 aja kok, BURUANN JOINNN!!</p>
+                <img src="apk.jpg" alt="apk" style="width:180px ;height: 80px;border-radius:15px;">
+                    <p>Jika ada yang ingin ditanyakan, lebih baik jangan!!</p>
+                <p>Ikuti Berita Terbaru Dari Kami <br> JOIN YUKK</p>
+
+            </div>                        
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; Berita Hoax.co.id</p>
+    </div>
+
+</body>
+</html>
